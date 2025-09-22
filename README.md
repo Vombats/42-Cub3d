@@ -161,6 +161,7 @@ valgrind --leak-check=full --suppressions=valgrind_x11.supp ./cub3D test.cub
 ```
 
 **Memory Safety Results**: ✅ **100% Leak-Free**
+
 - Zero definite memory leaks
 - Zero indirect memory leaks
 - Zero possible memory leaks
