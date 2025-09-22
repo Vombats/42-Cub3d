@@ -30,12 +30,12 @@ void	*ft_memmove(void *str1, const void *str2, size_t count)
 		}
 	}
 	else
-	{		
+	{
 		while (i < count)
 		{
 			s1[i] = s2[i];
 			i++;
 		}
-	}		
+	}
 	return (str1);
 }

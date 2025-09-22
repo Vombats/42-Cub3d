@@ -23,7 +23,8 @@ int	xdist_quad1(float o, int x, int y, t_cub *d)
 	dy = dx * tan(o);
 	x = d->g_player.posx - dx;
 	y = d->g_player.posy - dy;
-	while (x > 0 && x < (d->map_w * TILE_SIZE) && y > 0 && y < (d->map_h * TILE_SIZE))
+	while (x > 0 && x < (d->map_w * TILE_SIZE) && y > 0
+		&& y < (d->map_h * TILE_SIZE))
 	{
 		if (d->map[((y - 1) / TILE_SIZE)][(x - 1) / TILE_SIZE] == 1)
 		{
@@ -51,7 +52,8 @@ int	ydist_quad1(float o, int x, int y, t_cub *d)
 	dx = dy / tan(o);
 	x = d->g_player.posx - dx;
 	y = d->g_player.posy - dy;
-	while (x > 0 && x < (d->map_w * TILE_SIZE) && y > 0 && y < (d->map_h * TILE_SIZE))
+	while (x > 0 && x < (d->map_w * TILE_SIZE) && y > 0
+		&& y < (d->map_h * TILE_SIZE))
 	{
 		if (d->map[(y - 1) / TILE_SIZE][((x - 1) / TILE_SIZE)] == 1)
 		{

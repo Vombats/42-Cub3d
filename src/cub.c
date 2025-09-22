@@ -132,31 +132,20 @@ int	main(int argc, char **argv)
 {
 	t_cub	d;
 
-	/* Validate command line arguments */
 	if (argc != 2 || ft_checkarg(argv[1]))
 		ft_terror(ERR_USAGE);
-	
-	/* Initialize data structures and graphics system */
 	init_data(&d);
 	init_graphics(&d);
-	
-	/* Parse configuration file and prepare game state */
 	read_config(argv[1], &d);
 	fill_map_color(&d);
 	coord_to_pixel(&d);
 	d.g_player.o = spawn_angle(d.g_player.start_dir);
-	
-	/* Perform initial rendering */
 	cast_rays(0, 0, 0, &d);
 	mlx_put_image_to_window(d.mlx, d.win, d.img, 0, 0);
-	
-	/* Set up event handling and enter main loop */
 	mlx_do_key_autorepeatoff(d.mlx);
 	mlx_hook(d.win, 2, 1L << 0, &key_event, &d);
 	mlx_hook(d.win, 17, 0, &exit_hook, &d);
 	mlx_loop(d.mlx);
-	
-	/* Cleanup and exit */
 	clean_up(&d);
 	return (0);
 }

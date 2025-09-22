@@ -87,7 +87,7 @@ re: fclean all
 rebuild: fclean build
 
 # Memory leak testing with Valgrind
-valgrind: $(NAME)
+valgrind: build
 	@echo "🧪 Running Valgrind memory leak test..."
 	valgrind --leak-check=full --show-leak-kinds=definite,indirect,possible --suppressions=valgrind_x11.supp ./$(NAME)
 	@echo "✅ Valgrind test complete!"

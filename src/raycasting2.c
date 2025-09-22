@@ -99,23 +99,23 @@ int	which_wall(int dists_fov[250][2], int i, int j, t_cub *d)
 	wall = 0x000000;
 	if (dists_fov[i / 2][1] == 1)
 	{
-		wall = (*(unsigned int *)(d->we.addr + ((d->we.line_length * j + i \
-		* (d->we.bits_per_pixel / 8)))));
+		wall = (*(unsigned int *)(d->we.addr + ((d->we.line_length * j + i
+							* (d->we.bits_per_pixel / 8)))));
 	}
 	else if (dists_fov[i / 2][1] == 2)
 	{
-		wall = (*(unsigned int *)(d->no.addr + ((d->no.line_length * j + i \
-		* (d->no.bits_per_pixel / 8)))));
+		wall = (*(unsigned int *)(d->no.addr + ((d->no.line_length * j + i
+							* (d->no.bits_per_pixel / 8)))));
 	}
 	else if (dists_fov[i / 2][1] == 3)
 	{
-		wall = (*(unsigned int *)(d->ea.addr + ((d->ea.line_length * j + i \
-		* (d->ea.bits_per_pixel / 8)))));
+		wall = (*(unsigned int *)(d->ea.addr + ((d->ea.line_length * j + i
+							* (d->ea.bits_per_pixel / 8)))));
 	}
 	else if (dists_fov[i / 2][1] == 4)
 	{
-		wall = (*(unsigned int *)(d->so.addr + ((d->so.line_length * j + i \
-		* (d->so.bits_per_pixel / 8)))));
+		wall = (*(unsigned int *)(d->so.addr + ((d->so.line_length * j + i
+							* (d->so.bits_per_pixel / 8)))));
 	}
 	return (wall);
 }
