@@ -1,0 +1,32 @@
+# Valgrind suppression file for X11/MLX library
+{
+   mlx_x11_allocations
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:*X*
+}
+
+{
+   mlx_xcb_allocations
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:*xcb*
+}
+
+{
+   mlx_ext_allocations
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:*Xext*
+}
+
+{
+   mlx_init_allocations
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:mlx_init
+}

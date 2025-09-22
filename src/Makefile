@@ -86,4 +86,10 @@ re: fclean all
 # Quick rebuild that cleans object files automatically
 rebuild: fclean build
 
-.PHONY: all build clean clean-obj fclean norme re rebuild
+# Memory leak testing with Valgrind
+valgrind: $(NAME)
+	@echo "🧪 Running Valgrind memory leak test..."
+	valgrind --leak-check=full --show-leak-kinds=definite,indirect,possible --suppressions=valgrind_x11.supp ./$(NAME)
+	@echo "✅ Valgrind test complete!"
+
+.PHONY: all build clean clean-obj fclean norme re rebuild valgrind
